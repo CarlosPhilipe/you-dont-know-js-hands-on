@@ -3,7 +3,7 @@
 
 Notas:
 ### COERÇÃO:
-- é a forma que o JS utiliza para transformar o tipo do valor contido em uma variável, eles pordem se apresentar em dois tipos, coerção implícita e coerção explícita
+- é a forma que o JS utiliza para transformar o tipo do valor contido em uma variável, eles podem se apresentar em dois tipos, coerção implícita e coerção explícita
 - - **Coerção explícita**
 ```
 var a = "42";
@@ -43,3 +43,6 @@ true
 { }, { a: 42 } (objects)
 function foo() { .. } (functions)
 ```
+### Hoisting
+- Onde quer que var apareça dentro de um escopo, sua declaração é tomada como parte de todo o escopo e acessada em qualquer área dentro dele.
+- Quando uma declaração var é conceitualmente "movida" para o topo do **escopo**
