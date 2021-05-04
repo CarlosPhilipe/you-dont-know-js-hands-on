@@ -46,3 +46,23 @@ function foo() { .. } (functions)
 ### Hoisting
 - Onde quer que var apareça dentro de um escopo, sua declaração é tomada como parte de todo o escopo e acessada em qualquer área dentro dele.
 - Quando uma declaração var é conceitualmente "movida" para o topo do **escopo**
+
+### Polyfilling
+- A palavras "polyfill" é um termo inventado (por Remy Sharp) usado para referenciar a definição de uma nova funcionalidade e reproduzir um pedaço de código que é equivalente ao comportamento, mas que pode rodar em ambientes com o JS antigo.
+
+```
+if (!Number.isNaN) {
+    Number.isNaN = function isNaN(x) {
+        return x !== x;
+    };
+}
+```
+
+### Transpiling
+
+- Não existe nenhuma forma de polyfillar uma nova sintaxe, que ainda não foi incluída na linguagem. A nova sintaxe iria retornar um erro no mecanismo do JS como não reconhecida/inválida.
+
+- Sendo assim a melhor opção é usar uma ferramenta que converte seu código novo em um código antigo equivalente. Esse processo é comumente chamado "transpiling".
+
+- Essencialmente, seu código fonte é feito com o formato da nova sintaxe, mas quando você faz o deploy para o navegador ele aparece como um código transpilado com o formato da sintaxe velha. Tipicamente você insere o transpilador no seu processo de build, similar ao seu linter ou minifier.
+
